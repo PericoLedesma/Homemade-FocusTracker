@@ -1,44 +1,39 @@
-# Monitorización de Trabajo con Reconocimiento Facial
+# Homemade-FocusTracker with Facial Recognition
 
-## Descripción
+This project is a work monitoring system that uses facial recognition and object detection to track the presence and activity of a specific person.  
+The system can detect when you're in focus mode, on a break, or using your mobile phone, providing real-time metrics on focus time, break time, and phone usage.
 
-Este proyecto es un sistema de monitorización de trabajo que utiliza reconocimiento facial y detección de objetos para seguir la presencia y actividad de una persona específica.
-El sistema puede detectar cuándo estas modo focus, en pausa o utilizando el teléfono móvil, proporcionando métricas en tiempo real sobre su tiempo de enfoque, 
-pausa y uso del teléfono.
+## Features
 
+- **Personalized Facial Recognition:** Initial calibration to automatically recognize Pedro (if you work sideways, move your head during calibration).  
+- **Object Detection:** Uses the YOLO model to identify specific objects such as bottles and glasses.  
+- **State Management:**
+  - **Focus Time:** Total time Pedro is focused on work.
+  - **Pause Time:** Total time Pedro is on a break (not focused or using the phone).
+  - **Phone Time:** Total time Pedro uses the mobile phone.
+  - **Start of Focus Time:** Exact time Pedro started focusing.  
+- **Visual Interface:** Real-time display of counters for Focus Time, Pause Time, Phone Time, and the start time of Focus Time directly on the video window.  
+- **Body Tracking:** Integration with MediaPipe Pose to maintain Pedro’s detection even when his face turns.  
 
+## Requirements
 
-## Características
-
-- **Reconocimiento Facial Personalizado:** Calibración inicial para reconocer automáticamente a Pedro ( si te trabajas de lado, mueve la cabeza en la calibración)
-- **Detección de Objetos:** Utiliza el modelo YOLO para identificar objetos específicos como botellas y vasos
-- **Gestión de Estados:**
-  - **Focus Time:** Tiempo total que Pedro está enfocado en su trabajo.
-  - **Pause Time:** Tiempo total que Pedro está en pausa (no enfocado o utilizando el teléfono).
-  - **Phone Time:** Tiempo total que Pedro utiliza el teléfono móvil.
-  - **Inicio de Focus Time:** Hora exacta en la que Pedro comenzó a estar enfocado.
-- **Interfaz Visual:** Muestra en tiempo real los contadores de Focus Time, Pause Time, Phone Time y la hora de inicio del Focus Time directamente en la ventana de video.
-- **Seguimiento Corporal:** Integración con MediaPipe Pose para mantener la detección de Pedro incluso cuando gira su rostro.
-
-## Requisitos
-
-- **Sistema Operativo:** Windows, macOS o Linux.
-- **Lenguaje de Programación:** Python 3.10 
-- **Dependencias:**
+- **Operating System:** Windows, macOS, or Linux.  
+- **Programming Language:** Python 3.10  
+- **Dependencies:**
   - `opencv-python`
   - `numpy`
   - `mediapipe`
   - `face_recognition`
-  - `dlib` (requerido por `face_recognition`)
+  - `dlib` (required by `face_recognition`)  
 
-- 
-## Instalación
+## Installation
 
-1. **Clonar el Repositorio:**
+1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/tu-usuario/monitorizacion-trabajo.git
-   cd monitorizacion-trabajo
-2. **Modelo YOLO:** 
-- Crear carpeta yolo 
-- Descargar los archivos `yolov3.weights`, `yolov3.cfg` y `coco.names` desde https://pjreddie.com/darknet/yolo/
+   git clone https://github.com/your-username/work-monitoring.git
+   cd work-monitoring
+
+2.	**YOLO Model**
+	•	Create a yolo folder.
+	•	Download the yolov3.weights, yolov3.cfg, and coco.names files from YOLO website.
